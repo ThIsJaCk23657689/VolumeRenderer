@@ -79,7 +79,7 @@ struct World {
     float hdr_exposure = 1.0f;
 
     // volume rendering settings
-    char volume_data_folder_path[1024] = "assets/volumes/";
+    char volume_data_folder_path[1024] = "assets/volumes";
     std::string current_volume_data = "Please select a volume file (.toml)";
     std::vector<std::string> volume_data_files;
     bool use_lighting = true;

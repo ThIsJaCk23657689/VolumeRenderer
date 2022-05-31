@@ -12,10 +12,9 @@
 
 Volume::Volume(const std::string& info_file, const std::string& raw_file) :
     m_vao(0), m_vbo(0), m_ebo(0) {
-    std::string file_path = "assets/volumes/";
-    m_info.info_file_path = file_path + info_file;
+    m_info.info_file_path = info_file;
     if (!raw_file.empty()) {
-        m_info.raw_file_path = file_path + raw_file;
+        m_info.raw_file_path = raw_file;
     }
     Initialize();
 }

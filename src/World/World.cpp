@@ -36,7 +36,6 @@ void World::Create() {
 
     // Volume Initialize
     ScanVolumeDataFolder();
-    // my_volume->GenerateTFTexture(state.ui->m_transfer_function);
 }
 
 void World::Destroy() {

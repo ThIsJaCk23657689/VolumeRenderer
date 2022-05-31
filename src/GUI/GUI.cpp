@@ -344,7 +344,8 @@ void GUI::TransferFunctionRender() {
             if (state.world->current_volume_data == "Please select a volume file (.toml)") {
                 ImGui::OpenPopup("Error##NoChoseVolumeFile");
             } else {
-                state.world->my_volume = std::make_unique<Volume>(state.world->current_volume_data);
+                std::string volume_file = std::string(state.world->volume_data_folder_path) + "/"+ state.world->current_volume_data;
+                state.world->my_volume = std::make_unique<Volume>(volume_file);
                 state.world->my_volume->GenerateTFTexture(m_transfer_function);
             }
         }
