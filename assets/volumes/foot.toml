@@ -1,0 +1,17 @@
+name = "foot"
+description = ""
+raw_file = "foot.raw"
+
+[resolution]
+x = 256
+y = 256
+z = 256
+
+[voxel]
+sample_type = "unsigned char"
+endianness = "little"
+    [voxel.size]
+    x = 1.0
+    y = 1.0
+    z = 1.0
+    unit = ""
