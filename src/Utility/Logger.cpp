@@ -10,6 +10,8 @@
 #include <ctime>
 #include <mutex>
 
+#include "VERSION.hpp"
+
 void Logger::ShowMe() {
     std::cout << std::endl;
     std::cout << "Created by: " << std::endl;
@@ -18,6 +20,7 @@ void Logger::ShowMe() {
     std::cout << "\t\t  / / / __ \\ / // ___/_  / / __ `/ /   / //_/" << std::endl;
     std::cout << "\t\t / / / / / // /(__  ) /_/ / /_/ / /___/ ,<   " << std::endl;
     std::cout << "\t\t/_/ /_/ /_/___/____/\\____/\\__,_/\\____/_/|_|  " << std::endl;
+    std::cout << "Version: " << PROJECT_VERSION << std::endl;
     std::cout << std::endl;
 }
 

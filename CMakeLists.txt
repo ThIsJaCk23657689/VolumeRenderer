@@ -5,7 +5,7 @@ set(MY_PROJECT "Volume Renderer")
 set(MY_EXECUTABLE "volume_renderer")
 
 # 定義專案屬性
-project(${MY_PROJECT})
+project(${MY_PROJECT} VERSION 1.0.0)
 
 # 建立二進位執行檔目標
 add_executable(${MY_EXECUTABLE})
@@ -48,10 +48,14 @@ find_package(imgui REQUIRED)
 find_package(tomlplusplus REQUIRED)
 find_path(STB_INCLUDE_DIRS "stb_c_lexer.h")
 
+# Program Version
+configure_file(VERSION.hpp.in VERSION.hpp)
+
 # 指定標頭檔資料夾、找尋所有原始檔、並將【原始碼】加入到【執行檔目標】中
 target_include_directories(${MY_EXECUTABLE} PRIVATE
     "include"
     ${STB_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 file(GLOB MY_SOURCE CONFIGURE_DEPENDS
