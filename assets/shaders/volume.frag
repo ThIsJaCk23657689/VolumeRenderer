@@ -75,20 +75,20 @@ void main () {
         // 取樣後立即更新位置(沿著視線)，而實際的位置也改變，相對材質座標也要改變
         current_pos = current_pos + ray_direction * sample_rate;
         vec3 ray_direction_in_texture = vec3(1.0f);
-        vec3 actal_res = volume_resolution * volume_ratio;
-        ray_direction_in_texture.x = ray_direction.x / (actal_res.x);
-        ray_direction_in_texture.y = ray_direction.y / (actal_res.y);
-        ray_direction_in_texture.z = ray_direction.z / (actal_res.z);
+        vec3 actual_res = volume_resolution * volume_ratio;
+        ray_direction_in_texture.x = ray_direction.x / (actual_res.x);
+        ray_direction_in_texture.y = ray_direction.y / (actual_res.y);
+        ray_direction_in_texture.z = ray_direction.z / (actual_res.z);
         sample_pos = sample_pos + ray_direction_in_texture * sample_rate;
 
         // 如果射線出界了請離開迴圈
-        if (current_pos.x < -actal_res.x / 2.0f || current_pos.x > actal_res.x / 2.0f) {
+        if (current_pos.x < -actual_res.x / 2.0f || current_pos.x > actual_res.x / 2.0f) {
             break;
         }
-        if (current_pos.y < -actal_res.y / 2.0f || current_pos.y > actal_res.y / 2.0f) {
+        if (current_pos.y < -actual_res.y / 2.0f || current_pos.y > actual_res.y / 2.0f) {
             break;
         }
-        if (current_pos.z < -actal_res.z / 2.0f || current_pos.z > actal_res.z / 2.0f) {
+        if (current_pos.z < -actual_res.z / 2.0f || current_pos.z > actual_res.z / 2.0f) {
             break;
         }
 
